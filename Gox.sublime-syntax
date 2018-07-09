@@ -68,13 +68,12 @@ variables:
   # These are the only words that can't be used as identifiers.
   keyword: \b(?:break|case|chan|const|continue|default|defer|else|fallthrough|for|func|go|goto|if|import|interface|map|package|range|return|select|struct|switch|type|var)\b
 
-  # Note: this matches ALL valid identifiers, including built-in constants,
-  # functions and types. They're just predeclared identifiers, and can be
-  # redefined, used as variables, struct fields, function names, etc.
+  # Note: this matches ALL valid identifiers, including predeclared constants,
+  # functions and types.
   ident: \b(?!{{keyword}})[[:alpha:]_][[:alnum:]_]*\b
 
   # Single line only
-  general_comment: /\*[^*]*\*/
+  general_comment: /[*](?:[^*]|[*](?!/))*[*]/
 
   # Whitespace and general comments on a single line.
   # This should only be used for lookahead, not for capturing / scoping.

@@ -28,6 +28,9 @@ You may have to disable Go-specific linters when working on this file.
     */
 //  ^^ comment.block.go
 
+    /* * */
+//  ^^^^^^^ comment.block.go
+
 
 // # Imports
 
@@ -2134,6 +2137,16 @@ func _() {
 //             ^ punctuation.section.parens.end.go
 //               ^ meta.block.go punctuation.section.braces.begin.go
 //                ^ meta.block.go punctuation.section.braces.end.go
+
+    func ident /**/ () {}
+//  ^^^^ storage.type.func.go
+//       ^^^^^ entity.name.function.go
+//             ^^^^ comment.block.go
+
+    func ident /* * */ () {}
+//  ^^^^ storage.type.func.go
+//       ^^^^^ entity.name.function.go
+//             ^^^^^^^ comment.block.go
 
     func ident(
 //  ^^^^ storage.type.func.go
