@@ -377,11 +377,11 @@ contexts:
   # Definitely want to keep this as a numeric constant, not a "string".
   match-runes:
     - match: \'(\\x\h{2}|\\u\h{4}|\\U\h{8}|\\[0-7]{3}|\\.)'
-      scope: constant.numeric.rune.go
+      scope: constant.character.go
       captures:
-        1: constant.numeric.rune.escape.go
+        1: constant.character.escape.go
     - match: \'[^']*'
-      scope: constant.numeric.rune.go
+      scope: constant.character.go
 
   match-strings:
     - include: match-raw-string

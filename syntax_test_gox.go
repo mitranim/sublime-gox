@@ -1663,32 +1663,32 @@ func _() {
 // ## Runes
 
     ' '
-//  ^^^ constant.numeric.rune.go
+//  ^^^ constant.character.go
 
     '0'
-//  ^^^ constant.numeric.rune.go
+//  ^^^ constant.character.go
 
 // Escapes:
 
     '\n'
-//  ^^^^ constant.numeric.rune.go
-//   ^^ constant.numeric.rune.go constant.numeric.rune.escape.go
+//  ^^^^ constant.character.go
+//   ^^ constant.character.go constant.character.escape.go
 
     '\x00'
-//  ^^^^^^ constant.numeric.rune.go
-//   ^^^^ constant.numeric.rune.go constant.numeric.rune.escape.go
+//  ^^^^^^ constant.character.go
+//   ^^^^ constant.character.go constant.character.escape.go
 
     '\u0000'
-//  ^^^^^^^^ constant.numeric.rune.go
-//   ^^^^^^ constant.numeric.rune.go constant.numeric.rune.escape.go
+//  ^^^^^^^^ constant.character.go
+//   ^^^^^^ constant.character.go constant.character.escape.go
 
     '\U00000000'
-//  ^^^^^^^^^^^^ constant.numeric.rune.go
-//   ^^^^^^^^^^ constant.numeric.rune.go constant.numeric.rune.escape.go
+//  ^^^^^^^^^^^^ constant.character.go
+//   ^^^^^^^^^^ constant.character.go constant.character.escape.go
 
     '\000'
-//  ^^^^^^ constant.numeric.rune.go
-//   ^^^^ constant.numeric.rune.go constant.numeric.rune.escape.go
+//  ^^^^^^ constant.character.go
+//   ^^^^ constant.character.go constant.character.escape.go
 
 // ## Strings
 
@@ -1717,6 +1717,10 @@ func _() {
     "%"
 //  ^^^ string.quoted.double.go
 //   ^- constant.other.placeholder
+
+    "one /* two */ three"
+//  ^^^^^^^^^^^^^^^^^^^^^ string.quoted.double.go
+//  ^^^^^^^^^^^^^^^^^^^^^- comment
 
     `one two`
 //  ^ punctuation.definition.string.begin.go
@@ -1754,6 +1758,10 @@ func _() {
 //  ^^^^^ string.quoted.other.go
     `
 //  ^ string.quoted.other.go punctuation.definition.string.end.go
+
+    `one /* two */ three`
+//  ^^^^^^^^^^^^^^^^^^^^^ string.quoted.other.go
+//  ^^^^^^^^^^^^^^^^^^^^^- comment
 
 
 // # Operators

@@ -66,18 +66,14 @@ Disable the standard Go package to avoid conflicts (⌘⇪P → `Package Control
 Enjoy!
 
 
-## Pretty Colors
+## Scopes
 
-This syntax has some non-standard scopes:
+This syntax differentiates variable declarations from normal variable occurrences. Declarations receive these non-standard scopes:
 
   * `variable.declaration.go`
   * `variable.other.constant.declaration`
-  * `constant.numeric.rune.go`
-  * `constant.numeric.rune.escape.go`
 
-To make the most out of this syntax, customize your color scheme by adding support for these scopes. For example, in many color schemes, declarations are _italic_ and escapes are **bold**.
-
-I use fairly rich color schemes that support these scopes and more. Feel free to use as a reference or wholesale: https://github.com/Mitranim/sublime-themes.
+To make full use of this feature, extend your color scheme, adding support for these scopes. Alternatively, check out my custom color schemes. Feel free to use them as-is, or as reference for implementing your own: https://github.com/Mitranim/sublime-themes.
 
 
 ## TODO
