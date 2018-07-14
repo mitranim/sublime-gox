@@ -36,13 +36,13 @@ Differences from Sublime's built-in Go syntax:
 
   * Better snippets that don't mess with auto-completion.
 
-Current shortcomings (?):
+  * Slightly better indentation rules that more closely match `gofmt`.
 
-  * No support for block labels: needs feedback.
+Current shortcomings (?):
 
   * Fewer meta scopes: needs feedback.
 
-  * No fancy indentation rules.
+  * No support for block labels: needs feedback.
 
 
 ## Installation and Usage
