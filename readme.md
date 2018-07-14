@@ -45,7 +45,7 @@ Current shortcomings (?):
   * No fancy indentation rules.
 
 
-## Installation
+## Installation and Usage
 
 `cd` into Sublime Text's Packages directory. On MacOS, this is usually `"/Users/<user>/Library/Application Support/Sublime Text 3/Packages"`. Find it using Sublime's menu → Preferences → Browse Packages.
 
@@ -56,12 +56,7 @@ cd <package dir>
 git clone https://github.com/Mitranim/sublime-gox.git Gox
 ```
 
-
-## Usage
-
-Set Sublime to open all Go files as `Gox` (window bottom right → language picker).
-
-Disable the standard Go package to avoid conflicts (⌘⇪P → `Package Control: Disable Package`, or `Preferences: Settings` → `"ignored_packages": ["Go"]`).
+Note: the syntax is called `Go`, exactly the same as the default. Disable the default Go package to avoid conflicts: ⌘⇪P → `Package Control: Disable Package`, or `Preferences: Settings` → `"ignored_packages": ["Go"]`.
 
 Enjoy!
 

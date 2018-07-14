@@ -1,4 +1,4 @@
-// SYNTAX TEST "Gox.sublime-syntax"
+// SYNTAX TEST "Go.sublime-syntax"
 
 
 /*
@@ -6,7 +6,7 @@ NOTES
 
 This file is not intended to pass compilation or `go vet`.
 
-Formatting this with `gofmt` BREAKS TESTS.
+This file must not be formatted with `go fmt`.
 
 You may have to disable Go-specific linters when working on this file.
 */
