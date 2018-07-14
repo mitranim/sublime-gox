@@ -73,11 +73,11 @@ variables:
   ident: \b(?!{{keyword}})[[:alpha:]_][[:alnum:]_]*\b
 
   # Single line only
-  general_comment: /[*](?:[^*]|[*](?!/))*[*]/
+  inline_comment: /[*](?:[^*]|[*](?!/))*[*]/
 
   # Whitespace and general comments on a single line.
   # This should only be used for lookahead, not for capturing / scoping.
-  noise: (?:\s*|{{general_comment}})*
+  noise: (?:\s*|{{inline_comment}})*
 
 contexts:
   main:
@@ -372,9 +372,6 @@ contexts:
       scope: constant.numeric.integer.go
 
   # https://golang.org/ref/spec#Rune_literals
-  #
-  # These scopes are completely non-standard. Might want to revise.
-  # Definitely want to keep this as a numeric constant, not a "string".
   match-runes:
     - match: \'(\\x\h{2}|\\u\h{4}|\\U\h{8}|\\[0-7]{3}|\\.)'
       scope: constant.character.go
@@ -413,8 +410,10 @@ contexts:
           scope: constant.character.escape.go
         - include: match-fmt
 
-  # Tries to match the available combinations precisely, to avoid false
-  # positives in non-fmt strings that just happen to contain %.
+  # https://godoc.org/fmt
+  #
+  # Tries to match known patterns precisely, to avoid false positives in non-fmt
+  # strings that just happen to contain %.
   match-fmt:
     - match: '\%[ .\d#+-]*[A-Za-z]'
       scope: constant.other.placeholder.go
@@ -756,7 +755,7 @@ contexts:
     - include: pop-on-semicolon
     - include: match-comments
 
-    # Note: Go allows types to be wrapped in an arbitrary number of parens.
+    # Note: Go allows wrapping types in an arbitrary number of parens.
     - match: \(
       scope: punctuation.section.parens.begin.go
       push: [pop-type-nested-in-parens, pop-type]
