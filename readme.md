@@ -1,8 +1,8 @@
 ## Overview
 
-Syntax for the Go programming language for the Sublime Text editor.
+Syntax for the Go programming language for the Sublime Text editor. Intended to replace Sublime's built-in. Pending pull request: https://github.com/sublimehq/Packages/pull/1662. 
 
-Differences from Sublime's built-in Go syntax:
+Differences from Sublime's built-in:
 
   * Contextual types. Types are scoped where types are expected. There's no whitelist of "known" types.
 
@@ -43,6 +43,16 @@ Current shortcomings (?):
   * Fewer meta scopes: needs feedback.
 
   * No support for block labels: needs feedback.
+
+Screenshot before-after:
+
+![screen shot 2018-07-28 at 10 54 50](https://user-images.githubusercontent.com/4263831/43354424-09f502be-9255-11e8-9d6f-8c0b37e98809.jpg)
+
+Screenshot of symbol index before-after:
+
+![screen shot 2018-07-28 at 10 54 55](https://user-images.githubusercontent.com/4263831/43354428-260781ac-9255-11e8-9631-4920b6473e3b.jpg)
+
+(Many other differences didn't fit into the screenshots. This uses my Cloud color scheme, available at https://github.com/Mitranim/sublime-themes.)
 
 
 ## Installation and Usage
