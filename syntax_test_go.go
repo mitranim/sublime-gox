@@ -14,25 +14,66 @@ You may have to disable Go-specific linters when working on this file.
 
 // # Comments
 
-    // comment
-//  ^^^^^^^^^^ comment.line.go
+    //
+// ^ - comment - punctuation
+//  ^^ punctuation.definition.comment.go
+//  ^^^ comment.line.go
 
-    /* comment */  // comment
-//  ^^^^^^^^^^^^^ comment.block.go
-//                 ^^^^^^^^^^ comment.line.go
+    // comment // comment
+// ^ - comment - punctuation
+//  ^^ punctuation.definition.comment.go
+//  ^^^^^^^^^^^^^^^^^^^^^^ comment.line.go
+//             ^^ - punctuation
+
+    /* comment // comment */  // comment
+// ^ - comment - punctuation
+//  ^^ punctuation.definition.comment.begin.go
+//  ^^^^^^^^^^^^^^^^^^^^^^^^ comment.block.go
+//             ^^ - punctuation
+//                        ^^ punctuation.definition.comment.end.go
+//                          ^^ - comment - punctuation
+//                            ^^ punctuation.definition.comment.go
+//                            ^^^^^^^^^^^ comment.line.go
 
     /*
+// ^ - comment
 //  ^^^^ comment.block.go
     comment
 //  ^^^^^^^^ comment.block.go
     */
 //  ^^ comment.block.go
+//    ^ - comment
 
     /* * */
+// ^ - comment
 //  ^^^^^^^ comment.block.go
+//         ^ - comment
+
+    //go
+// ^ - comment - punctuation
+//  ^^ punctuation.definition.comment.go
+//  ^^^^^ comment.line.go - meta.annotation
+
+    //go:
+// ^ - comment - meta - punctuation
+//  ^^ punctuation.definition.annotation.go
+//  ^^^^^ comment.line.go meta.annotation.go
+//      ^ punctuation.accessor.double-colon.go
+//       ^ comment.line.go - meta.annotation
 
     //go:generate one two three
+// ^ - comment - meta - punctuation
+//  ^^ punctuation.definition.annotation.go
 //  ^^^^^^^^^^^^^^^^^^^^^^^^^^^ comment.line.go meta.annotation.go
+//      ^ punctuation.accessor.double-colon.go
+//       ^^^^^^^^ variable.annotation.function.go
+//               ^ - variable
+//                ^^^ variable.annotation.parameter.go
+//                   ^ - variable
+//                    ^^^ variable.annotation.parameter.go
+//                       ^ - variable
+//                        ^^^^^ variable.annotation.parameter.go
+//                             ^ comment.line.go - meta.annotation.go - variable
 
 
 // # Imports

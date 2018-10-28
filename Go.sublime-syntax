@@ -92,33 +92,43 @@ contexts:
 
   # https://golang.org/ref/spec#Comments
   match-comments:
-    - include: match-line-comment
-    - include: match-general-comment
-
-  match-line-comment:
     # Go has special comments in the form of:
     #   //go:some-directive arg0 arg1 ...
     # This regexp captures such a line, carefully scoping it as a comment and
     # an annotation, while assigning ONLY the commend scope to the end of the
     # line. This way, a background color applied to an annotation scope doesn't
     # apply to the infinite blank space on the rest of the line.
-    - match: (//go:.*)\s
-      scope: comment.line.go
+    - match: (//)(go)(:)({{ident}})?
       captures:
-        1: meta.annotation.go
-
-    # Explicitly matching \s also captures end-of-line. This ensures that things
-    # that rely on comment scoping, such as hotkeys, work properly at the end of
-    # the line when typing a new comment.
-    - match: //(?:.|\s)*
-      scope: comment.line.go
-
-  match-general-comment:
+        1: punctuation.definition.annotation.go
+        2: keyword.annotation.go
+        3: punctuation.accessor.double-colon.go
+        4: variable.annotation.function.go
+      push: [meta-comment, meta-annotation]
+    # line comments
+    - match: //
+      scope: punctuation.definition.comment.go
+      push: meta-comment
+    # general comments
     - match: /\*
+      scope: punctuation.definition.comment.begin.go
       push:
         - meta_scope: comment.block.go
         - match: \*/
+          scope: punctuation.definition.comment.end.go
           pop: true
+
+  meta-annotation:
+    - meta_scope: meta.annotation.go
+    - match: $
+      pop: true
+    - match: '{{ident}}'
+      scope: variable.annotation.parameter.go
+
+  meta-comment:
+    - meta_scope: comment.line.go
+    - match: $\n?
+      pop: true
 
   # https://golang.org/ref/spec#Tokens
   match-tokens:
