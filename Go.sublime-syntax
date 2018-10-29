@@ -76,7 +76,7 @@ variables:
 
   # Whitespace and general comments on a single line.
   # This should only be used for lookahead, not for capturing / scoping.
-  noise: (?:\s*|{{inline_comment}})*
+  noise: (?:\s|{{inline_comment}})*
 
   char_escape: \\x\h{2}|\\u\h{4}|\\U\h{8}|\\[0-7]{3}|\\.
 
@@ -98,12 +98,8 @@ contexts:
     # an annotation, while assigning ONLY the commend scope to the end of the
     # line. This way, a background color applied to an annotation scope doesn't
     # apply to the infinite blank space on the rest of the line.
-    - match: (//)(go)(:)({{ident}})?
-      captures:
-        1: punctuation.definition.annotation.go
-        2: keyword.annotation.go
-        3: punctuation.accessor.double-colon.go
-        4: variable.annotation.function.go
+    - match: //(?=go:)
+      scope: punctuation.definition.comment.go
       push: [meta-comment, meta-annotation]
     # line comments
     - match: //
@@ -122,8 +118,6 @@ contexts:
     - meta_scope: meta.annotation.go
     - match: $
       pop: true
-    - match: '{{ident}}'
-      scope: variable.annotation.parameter.go
 
   meta-comment:
     - meta_scope: comment.line.go
