@@ -56,23 +56,14 @@ You may have to disable Go-specific linters when working on this file.
 
     //go:
 // ^ - comment - meta - punctuation
-//  ^^ punctuation.definition.annotation.go
+//  ^^ punctuation.definition.comment.go
 //  ^^^^^ comment.line.go meta.annotation.go
-//      ^ punctuation.accessor.double-colon.go
 //       ^ comment.line.go - meta.annotation
 
     //go:generate one two three
 // ^ - comment - meta - punctuation
-//  ^^ punctuation.definition.annotation.go
+//  ^^ punctuation.definition.comment.go
 //  ^^^^^^^^^^^^^^^^^^^^^^^^^^^ comment.line.go meta.annotation.go
-//      ^ punctuation.accessor.double-colon.go
-//       ^^^^^^^^ variable.annotation.function.go
-//               ^ - variable
-//                ^^^ variable.annotation.parameter.go
-//                   ^ - variable
-//                    ^^^ variable.annotation.parameter.go
-//                       ^ - variable
-//                        ^^^^^ variable.annotation.parameter.go
 //                             ^ comment.line.go - meta.annotation.go - variable
 
 
