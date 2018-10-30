@@ -1,6 +1,6 @@
 ## Overview
 
-Syntax for the Go programming language for the Sublime Text editor. Intended to replace Sublime's built-in. Pending pull request: https://github.com/sublimehq/Packages/pull/1662. 
+Syntax for the Go programming language for the Sublime Text editor. Intended to replace Sublime's built-in. Pending pull request: https://github.com/sublimehq/Packages/pull/1662.
 
 Differences from Sublime's built-in:
 
@@ -52,7 +52,7 @@ Screenshot of symbol index before-after:
 
 ![screen shot 2018-07-28 at 10 54 55](https://user-images.githubusercontent.com/4263831/43354428-260781ac-9255-11e8-9631-4920b6473e3b.jpg)
 
-(Many other differences didn't fit into the screenshots. This uses my Cloud color scheme, available at https://github.com/Mitranim/sublime-themes.)
+(Many other differences didn't fit into the screenshots. This uses my Cloud color scheme, available at https://github.com/mitranim/sublime-themes.)
 
 
 ## Installation and Usage
@@ -63,7 +63,7 @@ Once there, clone the repo:
 
 ```sh
 cd <package dir>
-git clone https://github.com/Mitranim/sublime-gox.git Gox
+git clone https://github.com/mitranim/sublime-gox.git Gox
 ```
 
 Note: the syntax is called `Go`, exactly the same as the default. Disable the default Go package to avoid conflicts: ⌘⇪P → `Package Control: Disable Package`, or `Preferences: Settings` → `"ignored_packages": ["Go"]`.
@@ -78,7 +78,7 @@ This syntax differentiates variable declarations from normal variable occurrence
   * `variable.declaration.go`
   * `variable.other.constant.declaration`
 
-To make full use of this feature, extend your color scheme, adding support for these scopes. Alternatively, check out my custom color schemes. Feel free to use them as-is, or as reference for implementing your own: https://github.com/Mitranim/sublime-themes.
+To make full use of this feature, extend your color scheme, adding support for these scopes. Alternatively, check out my custom color schemes. Feel free to use them as-is, or as reference for implementing your own: https://github.com/mitranim/sublime-themes.
 
 
 ## TODO
