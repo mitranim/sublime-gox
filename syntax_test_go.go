@@ -112,32 +112,32 @@ You may have to disable Go-specific linters when working on this file.
 // ## chan
 
     chan _
-//  ^^^^ storage.type.go
+//  ^^^^ storage.keyword.chan.go
 //       ^- storage
 
     chan typ
-//  ^^^^ storage.type.go
+//  ^^^^ storage.keyword.chan.go
 //       ^^^ storage.type.go
 
     chan typ ident
-//  ^^^^ storage.type.go
+//  ^^^^ storage.keyword.chan.go
 //       ^^^ storage.type.go
 //           ^^^^^ variable.other.go
 
     chan ((typ))
-//  ^^^^ storage.type.go
+//  ^^^^ storage.keyword.chan.go
 //       ^^ punctuation.section.parens.begin.go
 //         ^^^ storage.type.go
 //            ^^ punctuation.section.parens.end.go
 
     chan ident.typ
-//  ^^^^ storage.type.go
+//  ^^^^ storage.keyword.chan.go
 //       ^^^^^ variable.other.go
 //            ^ punctuation.accessor.dot.go
 //             ^^^ storage.type.go
 
     chan ident.ident.typ
-//  ^^^^ storage.type.go
+//  ^^^^ storage.keyword.chan.go
 //       ^^^^^ variable.other.go
 //            ^ punctuation.accessor.dot.go
 //             ^^^^^ variable.other.go
@@ -145,7 +145,7 @@ You may have to disable Go-specific linters when working on this file.
 //                   ^^^ storage.type.go
 
     chan ((ident.ident.typ))
-//  ^^^^ storage.type.go
+//  ^^^^ storage.keyword.chan.go
 //       ^^ punctuation.section.parens.begin.go
 //         ^^^^^ variable.other.go
 //              ^ punctuation.accessor.dot.go
@@ -156,14 +156,14 @@ You may have to disable Go-specific linters when working on this file.
 
     <- chan ident.typ
 //  ^^ keyword.operator.go
-//     ^^^^ storage.type.go
+//     ^^^^ storage.keyword.chan.go
 //          ^^^^^ variable.other.go
 //               ^ punctuation.accessor.dot.go
 //                ^^^ storage.type.go
 
     <- chan ident.ident.typ
 //  ^^ keyword.operator.go
-//     ^^^^ storage.type.go
+//     ^^^^ storage.keyword.chan.go
 //          ^^^^^ variable.other.go
 //               ^ punctuation.accessor.dot.go
 //                ^^^^^ variable.other.go
@@ -171,14 +171,14 @@ You may have to disable Go-specific linters when working on this file.
 //                      ^^^ storage.type.go
 
     chan <- ident.typ
-//  ^^^^ storage.type.go
+//  ^^^^ storage.keyword.chan.go
 //       ^^ keyword.operator.go
 //          ^^^^^ variable.other.go
 //               ^ punctuation.accessor.dot.go
 //                ^^^ storage.type.go
 
     chan <- ident.ident.typ
-//  ^^^^ storage.type.go
+//  ^^^^ storage.keyword.chan.go
 //       ^^ keyword.operator.go
 //          ^^^^^ variable.other.go
 //               ^ punctuation.accessor.dot.go
@@ -187,12 +187,12 @@ You may have to disable Go-specific linters when working on this file.
 //                      ^^^ storage.type.go
 
     chan
-//  ^^^^ storage.type.go
+//  ^^^^ storage.keyword.chan.go
     typ
 //  ^^^ storage.type.go
 
     chan
-//  ^^^^ storage.type.go
+//  ^^^^ storage.keyword.chan.go
     ident /**/ . /**/
 //  ^^^^^ variable.other.go
 //        ^^^^ comment.block.go
@@ -204,7 +204,7 @@ You may have to disable Go-specific linters when working on this file.
     <-
 //  ^^ keyword.operator.go
     chan
-//  ^^^^ storage.type.go
+//  ^^^^ storage.keyword.chan.go
     ident /**/ . /**/
 //  ^^^^^ variable.other.go
 //        ^^^^ comment.block.go
@@ -219,7 +219,7 @@ You may have to disable Go-specific linters when working on this file.
 //  ^^^ storage.type.go
 
     chan
-//  ^^^^ storage.type.go
+//  ^^^^ storage.keyword.chan.go
     <-    /**/
 //  ^^ keyword.operator.go
 //        ^^^^ comment.block.go
@@ -237,68 +237,68 @@ You may have to disable Go-specific linters when working on this file.
 //  ^^^ storage.type.go
 
     chan chan chan typ
-//  ^^^^ storage.type.go
-//       ^^^^ storage.type.go
-//            ^^^^ storage.type.go
+//  ^^^^ storage.keyword.chan.go
+//       ^^^^ storage.keyword.chan.go
+//            ^^^^ storage.keyword.chan.go
 //                 ^^^ storage.type.go
 
     chan *chan **chan ***typ
-//  ^^^^ storage.type.go
+//  ^^^^ storage.keyword.chan.go
 //       ^ keyword.operator.go
-//        ^^^^ storage.type.go
+//        ^^^^ storage.keyword.chan.go
 //             ^^ keyword.operator.go
-//               ^^^^ storage.type.go
+//               ^^^^ storage.keyword.chan.go
 //                    ^^^ keyword.operator.go
 //                       ^^^ storage.type.go
 
     chan struct{}
-//  ^^^^ storage.type.go
-//       ^^^^^^ storage.type.go
+//  ^^^^ storage.keyword.chan.go
+//       ^^^^^^ storage.keyword.struct.go
 
     chan struct{} ident
-//  ^^^^ storage.type.go
-//       ^^^^^^ storage.type.go
+//  ^^^^ storage.keyword.chan.go
+//       ^^^^^^ storage.keyword.struct.go
 //                ^^^^^ variable.other.go
 
     chan interface{}
-//  ^^^^ storage.type.go
-//       ^^^^^^^^^ storage.type.go
+//  ^^^^ storage.keyword.chan.go
+//       ^^^^^^^^^ storage.keyword.interface.go
 
     chan interface{} ident
-//  ^^^^ storage.type.go
-//       ^^^^^^^^^ storage.type.go
+//  ^^^^ storage.keyword.chan.go
+//       ^^^^^^^^^ storage.keyword.interface.go
 //                   ^^^^^ variable.other.go
 
     chan func() func() typ
-//  ^^^^ storage.type.go
-//       ^^^^ storage.type.func.go
-//              ^^^^ storage.type.func.go
+//  ^^^^ storage.keyword.chan.go
+//       ^^^^ storage.keyword.function.go
+//              ^^^^ storage.keyword.function.go
 //                     ^^^ storage.type.go
 
     chan func() func() typ ident
-//  ^^^^ storage.type.go
-//       ^^^^ storage.type.func.go
-//              ^^^^ storage.type.func.go
+//  ^^^^ storage.keyword.chan.go
+//       ^^^^ storage.keyword.function.go
+//              ^^^^ storage.keyword.function.go
 //                     ^^^ storage.type.go
 //                         ^^^^^ variable.other.go
 
     chan
-//  ^^^^ storage.type.go
+//  ^^^^ storage.keyword.chan.go
     func() typ
-//  ^^^^ storage.type.func.go
+//  ^^^^ storage.keyword.function.go
 //         ^^^ storage.type.go
 
     chan []typ
-//  ^^^^ storage.type.go
+//  ^^^^ storage.keyword.chan.go
 //         ^^^ storage.type.go
 
     chan [][][]typ
-//  ^^^^ storage.type.go
+//  ^^^^ storage.keyword.chan.go
 //             ^^^ storage.type.go
 
     chan map[typ]typ
-//  ^^^^ storage.type.go
-//       ^^^ storage.type.go
+//  ^^^^ storage.keyword.chan.go
+//       ^^^ storage.keyword.map.go
 //           ^^^ storage.type.go
 //               ^^^ storage.type.go
 
@@ -311,12 +311,12 @@ You may have to disable Go-specific linters when working on this file.
 // function types.
 
     func()
-//  ^^^^ storage.type.func.go
+//  ^^^^ storage.keyword.function.go
 //      ^ punctuation.section.parens.begin.go
 //       ^ punctuation.section.parens.end.go
 
     func(typ, typ)
-//  ^^^^ storage.type.func.go
+//  ^^^^ storage.keyword.function.go
 //      ^ punctuation.section.parens.begin.go
 //       ^^^ storage.type.go
 //          ^ punctuation.separator.go
@@ -332,13 +332,13 @@ You may have to disable Go-specific linters when working on this file.
 //          ^^^ storage.type.go
 
     func()
-//  ^^^^ storage.type.func.go
+//  ^^^^ storage.keyword.function.go
     ident
 //  ^^^^^- storage
 //  ^^^^^ variable.other.go
 
     func(true false) (nil iota)
-//  ^^^^ storage.type.func.go
+//  ^^^^ storage.keyword.function.go
 //       ^^^^ variable.parameter.go
 //            ^^^^^ storage.type.go
 //                    ^^^ variable.parameter.go
@@ -350,7 +350,7 @@ You may have to disable Go-specific linters when working on this file.
 //               ^^^ storage.type.go
 
     func(param /**/ ... /**/ typ)
-//  ^^^^ storage.type.func.go
+//  ^^^^ storage.keyword.function.go
 //       ^^^^^ variable.parameter.go
 //             ^^^^ comment.block.go
 //                  ^^^ keyword.operator.variadic.go
@@ -358,7 +358,7 @@ You may have to disable Go-specific linters when working on this file.
 //                           ^^^ storage.type.go
 
     func(param ((typ)), param ...typ)
-//  ^^^^ storage.type.func.go
+//  ^^^^ storage.keyword.function.go
 //       ^^^^^ variable.parameter.go
 //               ^^^ storage.type.go
 //                      ^^^^^ variable.parameter.go
@@ -366,7 +366,7 @@ You may have to disable Go-specific linters when working on this file.
 //                               ^^^ storage.type.go
 
     func(param, param ((typ)), param, param ...typ)
-//  ^^^^ storage.type.func.go
+//  ^^^^ storage.keyword.function.go
 //       ^^^^^ variable.parameter.go
 //              ^^^^^ variable.parameter.go
 //                      ^^^ storage.type.go
@@ -447,14 +447,14 @@ You may have to disable Go-specific linters when working on this file.
 //              ^^^^ storage.type.go
 
     func(...ident.Type)
-//  ^^^^ storage.type.func.go
+//  ^^^^ storage.keyword.function.go
 //       ^^^ keyword.operator.variadic.go
 //          ^^^^^ variable.other.go
 //               ^ punctuation.accessor.dot.go
 //                ^^^^ storage.type.go
 
     func(...*ident.Type)
-//  ^^^^ storage.type.func.go
+//  ^^^^ storage.keyword.function.go
 //       ^^^ keyword.operator.variadic.go
 //          ^ keyword.operator.go
 //           ^^^^^ variable.other.go
@@ -471,13 +471,13 @@ You may have to disable Go-specific linters when working on this file.
     )
 
     func(param...typ)
-//  ^^^^ storage.type.func.go
+//  ^^^^ storage.keyword.function.go
 //       ^^^^^ variable.parameter.go
 //            ^^^ keyword.operator.variadic.go
 //               ^^^ storage.type.go
 
     func(param...ident.Type)
-//  ^^^^ storage.type.func.go
+//  ^^^^ storage.keyword.function.go
 //       ^^^^^ variable.parameter.go
 //            ^^^ keyword.operator.variadic.go
 //               ^^^^^ variable.other.go
@@ -485,7 +485,7 @@ You may have to disable Go-specific linters when working on this file.
 //                     ^^^^ storage.type.go
 
     func(param...*ident.Type)
-//  ^^^^ storage.type.func.go
+//  ^^^^ storage.keyword.function.go
 //       ^^^^^ variable.parameter.go
 //            ^^^ keyword.operator.variadic.go
 //               ^ keyword.operator.go
@@ -531,7 +531,7 @@ You may have to disable Go-specific linters when working on this file.
 
 // Deranged case
     func /**/ (
-//  ^^^^ storage.type.func.go
+//  ^^^^ storage.keyword.function.go
 //       ^^^^ comment.block.go
 //            ^ punctuation.section.parens.begin.go
         /**/
@@ -603,9 +603,9 @@ You may have to disable Go-specific linters when working on this file.
 //            ^^^ storage.type.go
 
     func() func() func() typ
-//  ^^^^ storage.type.func.go
-//         ^^^^ storage.type.func.go
-//                ^^^^ storage.type.func.go
+//  ^^^^ storage.keyword.function.go
+//         ^^^^ storage.keyword.function.go
+//                ^^^^ storage.keyword.function.go
 //                       ^^^ storage.type.go
 
     func() func() func() ((typ))
@@ -613,25 +613,25 @@ You may have to disable Go-specific linters when working on this file.
 
 // Deranged case
     func(param func(param func(param ...typ) func() typ) ...func(param typ))
-//  ^^^^ storage.type.func.go
+//  ^^^^ storage.keyword.function.go
 //      ^ punctuation.section.parens.begin.go
 //       ^^^^^ variable.parameter.go
-//             ^^^^ storage.type.func.go
+//             ^^^^ storage.keyword.function.go
 //                 ^ punctuation.section.parens.begin.go
 //                  ^^^^^ variable.parameter.go
-//                        ^^^^ storage.type.func.go
+//                        ^^^^ storage.keyword.function.go
 //                            ^ punctuation.section.parens.begin.go
 //                             ^^^^^ variable.parameter.go
 //                                   ^^^ keyword.operator.variadic.go
 //                                      ^^^ storage.type.go
 //                                         ^ punctuation.section.parens.end.go
-//                                           ^^^^ storage.type.func.go
+//                                           ^^^^ storage.keyword.function.go
 //                                               ^ punctuation.section.parens.begin.go
 //                                                ^ punctuation.section.parens.end.go
 //                                                  ^^^ storage.type.go
 //                                                     ^ punctuation.section.parens.end.go
 //                                                       ^^^ keyword.operator.variadic.go
-//                                                          ^^^^ storage.type.func.go
+//                                                          ^^^^ storage.keyword.function.go
 //                                                              ^ punctuation.section.parens.begin.go
 //                                                               ^^^^^ variable.parameter.go
 //                                                                     ^^^ storage.type.go
@@ -641,12 +641,12 @@ You may have to disable Go-specific linters when working on this file.
 // ## interface
 
     interface{}
-//  ^^^^^^^^^ storage.type.go
+//  ^^^^^^^^^ storage.keyword.interface.go
 //           ^ meta.type.go punctuation.section.braces.begin.go
 //            ^ meta.type.go punctuation.section.braces.end.go
 
     interface /**/ {
-//  ^^^^^^^^^ storage.type.go
+//  ^^^^^^^^^ storage.keyword.interface.go
 //            ^^^^ comment.block.go
 //                 ^ meta.type.go punctuation.section.braces.begin.go
 
@@ -714,7 +714,7 @@ You may have to disable Go-specific linters when working on this file.
 //  ^ meta.type.go punctuation.section.braces.end.go
 
     interface
-//  ^^^^^^^^^ storage.type.go
+//  ^^^^^^^^^ storage.keyword.interface.go
     {Method(param typ) typ; Inherit; Method(param typ) typ;}
 //  ^ meta.type.go punctuation.section.braces.begin.go
 //   ^^^^^^ meta.type.go entity.name.function.go
@@ -739,25 +739,29 @@ You may have to disable Go-specific linters when working on this file.
 // ## map
 
     map[typ]typ
-//  ^^^ storage.type.go
+//  ^^^ storage.keyword.map.go
 //     ^ punctuation.section.brackets.begin.go
 //      ^^^ storage.type.go
 //         ^ punctuation.section.brackets.end.go
 //          ^^^ storage.type.go
 
     map[typ]typ ident
+//  ^^^ storage.keyword.map.go
+//     ^ punctuation.section.brackets.begin.go
+//      ^^^ storage.type.go
+//         ^ punctuation.section.brackets.end.go
 //          ^^^ storage.type.go
 //              ^^^^^- storage
 //              ^^^^^ variable.other.go
 
     map[typ]
-//  ^^^ storage.type.go
+//  ^^^ storage.keyword.map.go
 //      ^^^ storage.type.go
     ident
 //  ^^^^^ variable.other.go
 
     map /**/ [/**/ typ /**/] /**/ typ
-//  ^^^ storage.type.go
+//  ^^^ storage.keyword.map.go
 //      ^^^^ comment.block.go
 //           ^ punctuation.section.brackets.begin.go
 //            ^^^^ comment.block.go
@@ -768,7 +772,7 @@ You may have to disable Go-specific linters when working on this file.
 //                                ^^^ storage.type.go
 
     map /**/
-//  ^^^ storage.type.go
+//  ^^^ storage.keyword.map.go
 //      ^^^^ comment.block.go
     /**/ [ /**/
 //  ^^^^ comment.block.go
@@ -783,63 +787,63 @@ You may have to disable Go-specific linters when working on this file.
 //                       ^^^ storage.type.go
 
     map[typ]map[typ]map[typ]map[typ]typ
-//  ^^^ storage.type.go
+//  ^^^ storage.keyword.map.go
 //      ^^^ storage.type.go
-//          ^^^ storage.type.go
+//          ^^^ storage.keyword.map.go
 //              ^^^ storage.type.go
-//                  ^^^ storage.type.go
+//                  ^^^ storage.keyword.map.go
 //                      ^^^ storage.type.go
-//                          ^^^ storage.type.go
+//                          ^^^ storage.keyword.map.go
 //                              ^^^ storage.type.go
 //                                  ^^^ storage.type.go
 
     map[chan chan typ]chan chan typ ident
-//  ^^^ storage.type.go
-//      ^^^^ storage.type.go
-//           ^^^^ storage.type.go
+//  ^^^ storage.keyword.map.go
+//      ^^^^ storage.keyword.chan.go
+//           ^^^^ storage.keyword.chan.go
 //                ^^^ storage.type.go
-//                    ^^^^ storage.type.go
-//                         ^^^^ storage.type.go
+//                    ^^^^ storage.keyword.chan.go
+//                         ^^^^ storage.keyword.chan.go
 //                              ^^^ storage.type.go
 //                                  ^^^^^ variable.other.go
 
     map[<- chan typ] chan <- typ
-//  ^^^ storage.type.go
+//  ^^^ storage.keyword.map.go
 //      ^^ keyword.operator.go
-//         ^^^^ storage.type.go
+//         ^^^^ storage.keyword.chan.go
 //              ^^^ storage.type.go
-//                   ^^^^ storage.type.go
+//                   ^^^^ storage.keyword.chan.go
 //                        ^^ keyword.operator.go
 //                           ^^^ storage.type.go
 
     map[func(param typ) typ]func(param typ) typ
-//  ^^^ storage.type.go
-//      ^^^^ storage.type.func.go
+//  ^^^ storage.keyword.map.go
+//      ^^^^ storage.keyword.function.go
 //           ^^^^^ variable.parameter.go
 //                 ^^^ storage.type.go
 //                      ^^^ storage.type.go
-//                          ^^^^ storage.type.func.go
+//                          ^^^^ storage.keyword.function.go
 //                               ^^^^^ variable.parameter.go
 //                                     ^^^ storage.type.go
 //                                          ^^^ storage.type.go
 
     map[map[typ]typ]map[typ]typ
-//  ^^^ storage.type.go
-//      ^^^ storage.type.go
+//  ^^^ storage.keyword.map.go
+//      ^^^ storage.keyword.map.go
 //          ^^^ storage.type.go
 //              ^^^ storage.type.go
-//                  ^^^ storage.type.go
+//                  ^^^ storage.keyword.map.go
 //                      ^^^ storage.type.go
 //                          ^^^ storage.type.go
 
     map[struct{
-//  ^^^ storage.type.go
-//      ^^^^^^ storage.type.go
+//  ^^^ storage.keyword.map.go
+//      ^^^^^^ storage.keyword.struct.go
         field typ
 //      ^^^^^ meta.type.go variable.other.member.declaration.go
 //            ^^^ meta.type.go storage.type.go
     }] struct {
-//     ^^^^^^ storage.type.go
+//     ^^^^^^ storage.keyword.struct.go
 //             ^ meta.type.go
         field typ
 //      ^^^^^ meta.type.go variable.other.member.declaration.go
@@ -848,14 +852,14 @@ You may have to disable Go-specific linters when working on this file.
     }
 
     map[*typ]*typ
-//  ^^^ storage.type.go
+//  ^^^ storage.keyword.map.go
 //      ^ keyword.operator.go
 //       ^^^ storage.type.go
 //           ^ keyword.operator.go
 //            ^^^ storage.type.go
 
     map[ident.Type]ident.Type
-//  ^^^ storage.type.go
+//  ^^^ storage.keyword.map.go
 //      ^^^^^ variable.other.go
 //           ^ punctuation.accessor.dot.go
 //            ^^^^ storage.type.go
@@ -864,7 +868,7 @@ You may have to disable Go-specific linters when working on this file.
 //                       ^^^^ storage.type.go
 
     map[*ident.Type]*ident.Type
-//  ^^^ storage.type.go
+//  ^^^ storage.keyword.map.go
 //      ^ keyword.operator.go
 //       ^^^^^ variable.other.go
 //            ^ punctuation.accessor.dot.go
@@ -875,6 +879,8 @@ You may have to disable Go-specific linters when working on this file.
 //                         ^^^^ storage.type.go
 
     map[typ]ident /**/ . /**/
+//  ^^^ storage.keyword.map.go
+//      ^^^ storage.type.go
 //          ^^^^^ variable.other.go
 //                ^^^^ comment.block.go
 //                     ^ punctuation.accessor.dot.go
@@ -888,14 +894,14 @@ You may have to disable Go-specific linters when working on this file.
 //          ^^^ storage.type.go
 
     map[[0]typ][0]typ
-//  ^^^ storage.type.go
+//  ^^^ storage.keyword.map.go
 //       ^ constant.numeric.integer.go
 //         ^^^ storage.type.go
 //              ^ constant.numeric.integer.go
 //                ^^^ storage.type.go
 
     map[/**/ [0] /**/ typ /**/ ] /**/ [0] /**/ typ
-//  ^^^ storage.type.go
+//  ^^^ storage.keyword.map.go
 //      ^^^^ comment.block.go
 //            ^ constant.numeric.integer.go
 //               ^^^^ comment.block.go
@@ -910,31 +916,35 @@ You may have to disable Go-specific linters when working on this file.
 // ## struct
 
     struct{}
-//  ^^^^^^ storage.type.go
+//  ^^^^^^ storage.keyword.struct.go
 //        ^ meta.type.go punctuation.section.braces.begin.go
 //         ^ meta.type.go punctuation.section.braces.end.go
 
     struct {field typ}
+//  ^^^^^^ storage.keyword.struct.go
 //          ^^^^^ meta.type.go variable.other.member.declaration.go
 //                ^^^ meta.type.go storage.type.go
 
     struct {field typ;}
+//  ^^^^^^ storage.keyword.struct.go
 //          ^^^^^ meta.type.go variable.other.member.declaration.go
 //                ^^^ meta.type.go storage.type.go
 
     struct {true nil}
-//  ^^^^^^ storage.type.go
+//  ^^^^^^ storage.keyword.struct.go
 //          ^^^^ meta.type.go variable.other.member.declaration.go
 //               ^^^ meta.type.go storage.type.go
 
     struct {embed}
+//  ^^^^^^ storage.keyword.struct.go
 //          ^^^^^ meta.type.go entity.other.inherited-class.go
 
     struct {embed;}
+//  ^^^^^^ storage.keyword.struct.go
 //          ^^^^^ meta.type.go entity.other.inherited-class.go
 
     struct {embed; field typ; *embed; field typ;}
-//  ^^^^^^ storage.type.go
+//  ^^^^^^ storage.keyword.struct.go
 //         ^ meta.type.go punctuation.section.braces.begin.go
 //          ^^^^^ meta.type.go entity.other.inherited-class.go
 //               ^ meta.type.go punctuation.terminator.go
@@ -950,7 +960,7 @@ You may have to disable Go-specific linters when working on this file.
 //                                              ^ meta.type.go punctuation.section.braces.end.go
 
     struct {
-//  ^^^^^^ storage.type.go
+//  ^^^^^^ storage.keyword.struct.go
         field typ `json:"field"`
 //      ^^^^^ meta.type.go variable.other.member.declaration.go
 //            ^^^ meta.type.go storage.type.go
@@ -981,7 +991,7 @@ You may have to disable Go-specific linters when working on this file.
     }
 
     struct
-//  ^^^^^^ storage.type.go
+//  ^^^^^^ storage.keyword.struct.go
     /**/
 //  ^^^^ comment.block.go
     {
@@ -1045,6 +1055,7 @@ You may have to disable Go-specific linters when working on this file.
     }
 
     struct {
+//  ^^^^^^ storage.keyword.struct.go
         /**/ field /**/ typ /**/
 //      ^^^^ meta.type.go comment.block.go
 //           ^^^^^ meta.type.go variable.other.member.declaration.go
@@ -1060,6 +1071,7 @@ You may have to disable Go-specific linters when working on this file.
     }
 
     struct {
+//  ^^^^^^ storage.keyword.struct.go
         field, field typ
 //      ^^^^^ meta.type.go variable.other.member.declaration.go
 //           ^ meta.type.go punctuation.separator.go
@@ -1076,9 +1088,10 @@ You may have to disable Go-specific linters when working on this file.
     }
 
     struct {
+//  ^^^^^^ storage.keyword.struct.go
         field chan typ
 //      ^^^^^ meta.type.go variable.other.member.declaration.go
-//            ^^^^ meta.type.go storage.type.go
+//            ^^^^ meta.type.go storage.keyword.chan.go
 //                 ^^^ meta.type.go storage.type.go
 
         embed
@@ -1087,7 +1100,7 @@ You may have to disable Go-specific linters when working on this file.
         field <- chan typ
 //      ^^^^^ meta.type.go variable.other.member.declaration.go
 //            ^^ meta.type.go keyword.operator.go
-//               ^^^^ meta.type.go storage.type.go
+//               ^^^^ meta.type.go storage.keyword.chan.go
 //                    ^^^ meta.type.go storage.type.go
 
         embed
@@ -1095,7 +1108,7 @@ You may have to disable Go-specific linters when working on this file.
 
         field chan <- typ
 //      ^^^^^ meta.type.go variable.other.member.declaration.go
-//            ^^^^ meta.type.go storage.type.go
+//            ^^^^ meta.type.go storage.keyword.chan.go
 //                 ^^ meta.type.go keyword.operator.go
 //                    ^^^ meta.type.go storage.type.go
 
@@ -1104,7 +1117,7 @@ You may have to disable Go-specific linters when working on this file.
 
         field func(param typ) typ
 //      ^^^^^ meta.type.go variable.other.member.declaration.go
-//            ^^^^ meta.type.go storage.type.func.go
+//            ^^^^ meta.type.go storage.keyword.function.go
 //                ^ meta.type.go punctuation.section.parens.begin.go
 //                 ^^^^^ meta.type.go variable.parameter.go
 //                       ^^^ meta.type.go storage.type.go
@@ -1117,7 +1130,7 @@ You may have to disable Go-specific linters when working on this file.
 
         field func(
 //      ^^^^^ meta.type.go variable.other.member.declaration.go
-//            ^^^^ meta.type.go storage.type.func.go
+//            ^^^^ meta.type.go storage.keyword.function.go
             param typ
 //          ^^^^^ meta.type.go variable.parameter.go
 //                ^^^ meta.type.go storage.type.go
@@ -1132,7 +1145,7 @@ You may have to disable Go-specific linters when working on this file.
 
         field map[
 //      ^^^^^ meta.type.go variable.other.member.declaration.go
-//            ^^^ meta.type.go storage.type.go
+//            ^^^ meta.type.go storage.keyword.map.go
             typ
 //          ^^^ meta.type.go storage.type.go
         ] typ
@@ -1143,7 +1156,7 @@ You may have to disable Go-specific linters when working on this file.
 
         field interface{
 //      ^^^^^ meta.type.go variable.other.member.declaration.go
-//            ^^^^^^^^^ meta.type.go storage.type.go
+//            ^^^^^^^^^ meta.type.go storage.keyword.interface.go
             method()
 //          ^^^^^^ meta.type.go meta.type.go entity.name.function.go
         }
@@ -1153,7 +1166,7 @@ You may have to disable Go-specific linters when working on this file.
 
         field struct{
 //      ^^^^^ meta.type.go variable.other.member.declaration.go
-//            ^^^^^^ meta.type.go storage.type.go
+//            ^^^^^^ meta.type.go storage.keyword.struct.go
             field typ
 //          ^^^^^ meta.type.go meta.type.go variable.other.member.declaration.go
 //                ^^^ meta.type.go meta.type.go storage.type.go
@@ -1242,7 +1255,7 @@ You may have to disable Go-specific linters when working on this file.
 //  ^^^^^ variable.other.go
 
     []func(
-//    ^^^^ storage.type.func.go
+//    ^^^^ storage.keyword.function.go
         param typ
 //      ^^^^^ variable.parameter.go
 //            ^^^ storage.type.go
@@ -1254,12 +1267,12 @@ You may have to disable Go-specific linters when working on this file.
 // # Type Definitions
 
     type Type typ
-//  ^^^^ storage.type.go
+//  ^^^^ storage.keyword.type.go
 //       ^^^^ entity.name.type.go
 //            ^^^ storage.type.go
 
     type
-//  ^^^^ storage.type.go
+//  ^^^^ storage.keyword.type.go
     /**/
 //  ^^^^ comment.block.go
     Type /**/ * /**/ * /**/ ident /**/ . /**/
@@ -1284,46 +1297,46 @@ You may have to disable Go-specific linters when working on this file.
 //           ^^^^ storage.type.go
 
     type Type
-//  ^^^^ storage.type.go
+//  ^^^^ storage.keyword.type.go
 //       ^^^^ entity.name.type.go
     ident
 //  ^^^^^ variable.other.go
 
     type Type; ident
-//  ^^^^ storage.type.go
+//  ^^^^ storage.keyword.type.go
 //       ^^^^ entity.name.type.go
 //           ^ punctuation.terminator.go
 //             ^^^^^ variable.other.go
 
     type Type chan typ
-//  ^^^^ storage.type.go
+//  ^^^^ storage.keyword.type.go
 //       ^^^^ entity.name.type.go
-//            ^^^^ storage.type.go
+//            ^^^^ storage.keyword.chan.go
 //                 ^^^ storage.type.go
 
     type Type <- chan typ
-//  ^^^^ storage.type.go
+//  ^^^^ storage.keyword.type.go
 //       ^^^^ entity.name.type.go
 //            ^^ keyword.operator.go
-//               ^^^^ storage.type.go
+//               ^^^^ storage.keyword.chan.go
 //                    ^^^ storage.type.go
 
     type Type chan <- typ
-//  ^^^^ storage.type.go
+//  ^^^^ storage.keyword.type.go
 //       ^^^^ entity.name.type.go
-//            ^^^^ storage.type.go
+//            ^^^^ storage.keyword.chan.go
 //                 ^^ keyword.operator.go
 //                    ^^^ storage.type.go
 
     type Type chan typ ident
-//  ^^^^ storage.type.go
+//  ^^^^ storage.keyword.type.go
 //       ^^^^ entity.name.type.go
-//            ^^^^ storage.type.go
+//            ^^^^ storage.keyword.chan.go
 //                 ^^^ storage.type.go
 //                     ^^^^^ variable.other.go
 
     type Type func(
-//            ^^^^ storage.type.func.go
+//            ^^^^ storage.keyword.function.go
         param typ
 //      ^^^^^ variable.parameter.go
 //            ^^^ storage.type.go
@@ -1332,21 +1345,21 @@ You may have to disable Go-specific linters when working on this file.
 //        ^^^^^ variable.other.go
 
     type Type map[typ]typ ident
-//  ^^^^ storage.type.go
+//  ^^^^ storage.keyword.type.go
 //       ^^^^ entity.name.type.go
-//            ^^^ storage.type.go
+//            ^^^ storage.keyword.map.go
 //                ^^^ storage.type.go
 //                    ^^^ storage.type.go
 //                        ^^^^^ variable.other.go
 
     type Type []typ ident
-//  ^^^^ storage.type.go
+//  ^^^^ storage.keyword.type.go
 //       ^^^^ entity.name.type.go
 //              ^^^ storage.type.go
 //                  ^^^^^ variable.other.go
 
     type Type interface {
-//            ^^^^^^^^^ storage.type.go
+//            ^^^^^^^^^ storage.keyword.interface.go
         Method()
 //      ^^^^^^ meta.type.go entity.name.function.go
         Inherit
@@ -1355,7 +1368,7 @@ You may have to disable Go-specific linters when working on this file.
 //    ^^^^^ variable.other.go
 
     type Type struct {
-//            ^^^^^^ storage.type.go
+//            ^^^^^^ storage.keyword.struct.go
         field typ
 //      ^^^^^ meta.type.go variable.other.member.declaration.go
 //            ^^^ meta.type.go storage.type.go
@@ -1381,12 +1394,12 @@ You may have to disable Go-specific linters when working on this file.
 
         Type func(
 //      ^^^^ entity.name.type.go
-//           ^^^^ storage.type.func.go
+//           ^^^^ storage.keyword.function.go
         )
 
         Type map
 //      ^^^^ entity.name.type.go
-//           ^^^ storage.type.go
+//           ^^^ storage.keyword.map.go
         [typ]typ
 //       ^^^ storage.type.go
 //           ^^^ storage.type.go
@@ -1397,14 +1410,14 @@ You may have to disable Go-specific linters when working on this file.
 
         Type interface {
 //      ^^^^ entity.name.type.go
-//           ^^^^^^^^^ storage.type.go
+//           ^^^^^^^^^ storage.keyword.interface.go
             Method()
 //          ^^^^^^ meta.type.go entity.name.function.go
         }
 
         Type struct {
 //      ^^^^ entity.name.type.go
-//           ^^^^^^ storage.type.go
+//           ^^^^^^ storage.keyword.struct.go
             field typ
 //          ^^^^^ meta.type.go variable.other.member.declaration.go
 //                ^^^ meta.type.go storage.type.go
@@ -1421,7 +1434,7 @@ You may have to disable Go-specific linters when working on this file.
 
 // Empty identifier is NOT scoped
     const _ = 10
-//  ^^^^^ storage.modifier.const.go
+//  ^^^^^ storage.keyword.const.go
 //        ^- constant
 //        ^- variable
 //        ^- storage
@@ -1430,7 +1443,7 @@ You may have to disable Go-specific linters when working on this file.
 
     /**/ const
 //  ^^^^ comment.block.go
-//       ^^^^^ storage.modifier.const.go
+//       ^^^^^ storage.keyword.const.go
     /**/ ident /**/ typ /**/ = /**/ iota /**/
 //  ^^^^ comment.block.go
 //       ^^^^^ variable.other.constant.declaration.go
@@ -1443,27 +1456,27 @@ You may have to disable Go-specific linters when working on this file.
 //                                       ^^^^ comment.block.go
 
     const ident, ident = 10, 20
-//  ^^^^^ storage.modifier.const.go
+//  ^^^^^ storage.keyword.const.go
 //        ^^^^^ variable.other.constant.declaration.go
 //             ^ punctuation.separator.go
 //               ^^^^^ variable.other.constant.declaration.go
 
     const ident, ident typ
-//  ^^^^^ storage.modifier.const.go
+//  ^^^^^ storage.keyword.const.go
 //        ^^^^^ variable.other.constant.declaration.go
 //             ^ punctuation.separator.go
 //               ^^^^^ variable.other.constant.declaration.go
 //                     ^^^ storage.type.go
 
     const ident,
-//  ^^^^^ storage.modifier.const.go
+//  ^^^^^ storage.keyword.const.go
 //        ^^^^^ variable.other.constant.declaration.go
 //             ^ punctuation.separator.go
           ident = 10, 20
 //        ^^^^^ variable.other.constant.declaration.go
 
     const ident,
-//  ^^^^^ storage.modifier.const.go
+//  ^^^^^ storage.keyword.const.go
 //        ^^^^^ variable.other.constant.declaration.go
 //             ^ punctuation.separator.go
           ident typ
@@ -1472,7 +1485,7 @@ You may have to disable Go-specific linters when working on this file.
 
     /**/ const
 //  ^^^^ comment.block.go
-//       ^^^^^ storage.modifier.const.go
+//       ^^^^^ storage.keyword.const.go
     (
 //  ^ punctuation.section.parens.begin.go
         /**/ ident /**/ typ /**/ = /**/ iota + iota /**/
@@ -1572,7 +1585,7 @@ You may have to disable Go-specific linters when working on this file.
     )
 
 const ident typ = ident +
-// ^^ storage.modifier.const.go
+// ^^ storage.keyword.const.go
 //    ^^^^^ variable.other.constant.declaration.go
 //          ^^^ storage.type.go
 //              ^ keyword.operator.assignment.go
@@ -1588,7 +1601,7 @@ const ident typ = ident +
 //  ^^^^^ variable.other.go
 
 const (
-// ^^ storage.modifier.const.go
+// ^^ storage.keyword.const.go
     ident typ = ident +
 //  ^^^^^ variable.other.constant.declaration.go
 //        ^^^ storage.type.go
@@ -1610,19 +1623,19 @@ const (
 // iota is predefined only in constant declarations. It's not a reserved word.
 func _() {
     var iota = 0
-//  ^^^ storage.modifier.var.go
+//  ^^^ storage.keyword.var.go
 //      ^^^^ variable.declaration.go
 //           ^ keyword.operator.assignment.go
 //             ^ constant.numeric.integer.go
     var _ = iota
-//  ^^^ storage.modifier.var.go
+//  ^^^ storage.keyword.var.go
 //        ^ keyword.operator.assignment.go
 //          ^^^^ variable.other.go
 //          ^^^^- constant
 }
 
     var _ = log.Println
-//  ^^^ storage.modifier.var.go
+//  ^^^ storage.keyword.var.go
 //      ^- constant
 //      ^- variable
 //      ^- storage
@@ -1633,7 +1646,7 @@ func _() {
 
     /**/ var
 //  ^^^^ comment.block.go
-//       ^^^ storage.modifier.var.go
+//       ^^^ storage.keyword.var.go
     /**/ ident /**/ typ /**/ = /**/ 10 /**/
 //  ^^^^ comment.block.go
 //       ^^^^^ variable.declaration.go
@@ -1646,27 +1659,27 @@ func _() {
 //                                     ^^^^ comment.block.go
 
     var ident, ident = 10, 20
-//  ^^^ storage.modifier.var.go
+//  ^^^ storage.keyword.var.go
 //      ^^^^^ variable.declaration.go
 //           ^ punctuation.separator.go
 //             ^^^^^ variable.declaration.go
 
     var ident, ident typ
-//  ^^^ storage.modifier.var.go
+//  ^^^ storage.keyword.var.go
 //      ^^^^^ variable.declaration.go
 //           ^ punctuation.separator.go
 //             ^^^^^ variable.declaration.go
 //                   ^^^ storage.type.go
 
     var ident,
-//  ^^^ storage.modifier.var.go
+//  ^^^ storage.keyword.var.go
 //      ^^^^^ variable.declaration.go
 //           ^ punctuation.separator.go
         ident = 10, 20
 //      ^^^^^ variable.declaration.go
 
     var ident,
-//  ^^^ storage.modifier.var.go
+//  ^^^ storage.keyword.var.go
 //      ^^^^^ variable.declaration.go
 //           ^ punctuation.separator.go
         ident typ
@@ -1675,7 +1688,7 @@ func _() {
 
     /**/ var
 //  ^^^^ comment.block.go
-//       ^^^ storage.modifier.var.go
+//       ^^^ storage.keyword.var.go
     (
 //  ^ punctuation.section.parens.begin.go
         /**/ ident /**/ typ /**/ = /**/ ident /**/ + /**/ 20 /**/
@@ -2185,7 +2198,7 @@ func _() {
     ident.(chan typ)
 //  ^^^^^ variable.other.go
 //       ^ punctuation.accessor.dot.go
-//         ^^^^ storage.type.go
+//         ^^^^ storage.keyword.chan.go
 //              ^^^ storage.type.go
 
     ident.(***ident)
@@ -2336,18 +2349,18 @@ func _() {
 
     (*chan typ)(ident)
 //   ^ keyword.operator.go
-//    ^^^^ storage.type.go
+//    ^^^^ storage.keyword.chan.go
 //         ^^^ storage.type.go
 //              ^^^^^ variable.other.go
 
     map[typ]typ(ident)
-//  ^^^ storage.type.go
+//  ^^^ storage.keyword.map.go
 //      ^^^ storage.type.go
 //          ^^^ storage.type.go
 //              ^^^^^ variable.other.go
 
     (map[typ]typ)(ident)
-//   ^^^ storage.type.go
+//   ^^^ storage.keyword.map.go
 //       ^^^ storage.type.go
 //           ^^^ storage.type.go
 //                ^^^^^ variable.other.go
@@ -2404,14 +2417,14 @@ func _() {
 // declarations, anonymous functions, and function types.
 
     func() {}
-//  ^^^^ storage.type.func.go
+//  ^^^^ storage.keyword.function.go
 //      ^ punctuation.section.parens.begin.go
 //       ^ punctuation.section.parens.end.go
 //         ^ meta.block.go punctuation.section.braces.begin.go
 //          ^ meta.block.go punctuation.section.braces.end.go
 
     func ident() {}
-//  ^^^^ storage.type.func.go
+//  ^^^^ storage.keyword.function.go
 //       ^^^^^ entity.name.function.go
 //            ^ punctuation.section.parens.begin.go
 //             ^ punctuation.section.parens.end.go
@@ -2419,17 +2432,17 @@ func _() {
 //                ^ meta.block.go punctuation.section.braces.end.go
 
     func ident /**/ () {}
-//  ^^^^ storage.type.func.go
+//  ^^^^ storage.keyword.function.go
 //       ^^^^^ entity.name.function.go
 //             ^^^^ comment.block.go
 
     func ident /* * */ () {}
-//  ^^^^ storage.type.func.go
+//  ^^^^ storage.keyword.function.go
 //       ^^^^^ entity.name.function.go
 //             ^^^^^^^ comment.block.go
 
     func ident(
-//  ^^^^ storage.type.func.go
+//  ^^^^ storage.keyword.function.go
 //       ^^^^^ entity.name.function.go
         param typ
 //      ^^^^^ variable.parameter.go
@@ -2449,7 +2462,7 @@ func _() {
 //                          ^ punctuation.section.parens.end.go
 
     func (Type) Method() {}
-//  ^^^^ storage.type.func.go
+//  ^^^^ storage.keyword.function.go
 //       ^ meta.function.declaration.go punctuation.section.parens.begin.go
 //        ^^^^ meta.function.declaration.go storage.type.go
 //            ^ meta.function.declaration.go punctuation.section.parens.end.go
@@ -2458,7 +2471,7 @@ func _() {
 //                     ^ punctuation.section.parens.end.go
 
     func /**/
-//  ^^^^ storage.type.func.go
+//  ^^^^ storage.keyword.function.go
 //       ^^^^ comment.block.go
     ( /**/ self /**/ * /**/ ident /**/ . /**/ Type /**/ ) /**/ Method /**/ (
 //  ^ meta.function.declaration.go punctuation.section.parens.begin.go
