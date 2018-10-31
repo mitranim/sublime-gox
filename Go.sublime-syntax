@@ -92,20 +92,36 @@ contexts:
 
   # https://golang.org/ref/spec#Comments
   match-comments:
-    # Go has special comments in the form of:
-    #   //go:some-directive arg0 arg1 ...
-    # This regexp captures such a line, carefully scoping it as a comment and
-    # an annotation, while assigning ONLY the commend scope to the end of the
-    # line. This way, a background color applied to an annotation scope doesn't
-    # apply to the infinite blank space on the rest of the line.
-    - match: //(?=go:)
-      scope: punctuation.definition.comment.go
-      push: [meta-comment, meta-annotation]
-    # line comments
+    # Go has magic comments in the form of:
+    #
+    # //go:some_directive arg0 arg1 ...
+    #
+    # They're not part of the language spec, may not be recognized by some Go
+    # compilers, and may stop working in future releases. Therefore,
+    # highlighting them as compiler pragmas could be misleading. We scope them
+    # as plain comments by default, and add some detailed meta scopes for
+    # enterprising users wishing to add more color.
+    - match: (//)(go)(:)({{ident}})?
+      captures:
+        1: punctuation.definition.comment.go
+        2: meta.keyword.annotation.go
+        3: meta.punctuation.accessor.colon.go
+        4: meta.variable.function.go
+      push:
+        - meta_scope: comment.line.go meta.annotation.go
+        - match: \S+
+          scope: meta.variable.parameter.go
+        # End the annotation scope at EOL, but stretch the comment scope
+        # indefinitely to the right.
+        - match: $
+          set: pop-line-comment
+
+    # Line comment
     - match: //
       scope: punctuation.definition.comment.go
-      push: meta-comment
-    # general comments
+      push: pop-line-comment
+
+    # General comment
     - match: /\*
       scope: punctuation.definition.comment.begin.go
       push:
@@ -114,14 +130,13 @@ contexts:
           scope: punctuation.definition.comment.end.go
           pop: true
 
-  meta-annotation:
-    - meta_scope: meta.annotation.go
-    - match: $
-      pop: true
-
-  meta-comment:
+  pop-line-comment:
     - meta_scope: comment.line.go
-    - match: $\n?
+    # Unlike plain $, this doesn't terminate where the text ends. Instead,
+    # it stretches the scope "infinitely" to the right. This ensures that
+    # things that rely on comment scopes, such as hotkeys, work properly at
+    # the end of the line when typing a new comment.
+    - match: \s$
       pop: true
 
   # https://golang.org/ref/spec#Tokens
