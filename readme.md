@@ -82,6 +82,7 @@ This syntax differentiates variable declarations from normal variable occurrence
 
 To make full use of this feature, extend your color scheme, adding support for these scopes. Alternatively, check out my custom color schemes. Feel free to use them as-is, or as reference for implementing your own: https://github.com/mitranim/sublime-themes.
 
+This syntax also distinguishes type-related _keywords_, such as `type` or `interface{}`, from _type names_. Type keywords receive `storage.type.keyword.X.go`, while type names receive `storage.type.go`. This potentially allows a color scheme to highlight keywords as keywords.
 
 ## TODO
 
