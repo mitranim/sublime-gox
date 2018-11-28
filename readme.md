@@ -14,7 +14,7 @@ Differences from Sublime's built-in:
 
   * The first argument to `new` and `make` is scoped as a type.
 
-  * Methods declared inside an `interface` are added to the symbol index, reflecting the fact that they actually exist as functions.
+  * Methods declared inside an `interface` are added to the symbol index, reflecting the fact that they're actually accessible as methods on the interface type.
 
   * Supports embedded structs.
 
@@ -34,9 +34,11 @@ Differences from Sublime's built-in:
 
   * All keywords and predeclared identifiers are added to auto-completions by default.
 
-  * Better snippets that don't mess with auto-completion.
+  * Fewer and better snippets that don't mess with the typing flow or regular auto-completions.
 
-  * Slightly better indentation rules that more closely match `gofmt`.
+  * Slightly better indentation rules, optimized for typing.
+
+  * Type keywords (`type`, `interface`, etc.) are scoped differently from type names.
 
 Current shortcomings (?):
 
@@ -63,7 +65,7 @@ Once there, clone the repo:
 
 ```sh
 cd <package dir>
-git clone https://github.com/mitranim/sublime-gox.git Gox
+git clone https://github.com/mitranim/sublime-gox.git Go
 ```
 
 Note: the syntax is called `Go`, exactly the same as the default. Disable the default Go package to avoid conflicts: ⌘⇪P → `Package Control: Disable Package`, or `Preferences: Settings` → `"ignored_packages": ["Go"]`.
@@ -87,6 +89,13 @@ To make full use of this feature, extend your color scheme, adding support for t
 
 * support for `text/template` and `html/template` templates?
 
+* detect data structure literals
+
+  * detect type names preceding a data literal
+  * a data literal is recursive: `{}` without a type name is another literal
+  * detect field names
+
+* outside of data structure literals, detect block labels
 
 ## Misc
 
