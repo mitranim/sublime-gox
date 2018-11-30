@@ -1,8 +1,8 @@
 ## Overview
 
-Syntax for the Go programming language for the Sublime Text editor. Intended to replace Sublime's built-in. Pending pull request: https://github.com/sublimehq/Packages/pull/1662.
+Syntax for the Go programming language for the Sublime Text editor. Recently merged into Sublime's default packages, replacing the older Go syntax: https://github.com/sublimehq/Packages/pull/1662. This repo is now frozen.
 
-Differences from Sublime's built-in:
+Differences from the older Go syntax:
 
   * Contextual types. Types are scoped where types are expected. There's no whitelist of "known" types.
 
@@ -84,6 +84,7 @@ To make full use of this feature, extend your color scheme, adding support for t
 
 This syntax also distinguishes type-related _keywords_, such as `type` or `interface{}`, from _type names_. Type keywords receive `storage.type.keyword.X.go`, while type names receive `storage.type.go`. This potentially allows a color scheme to highlight keywords as keywords.
 
+
 ## TODO
 
 * type switch
@@ -98,8 +99,11 @@ This syntax also distinguishes type-related _keywords_, such as `type` or `inter
 
 * outside of data structure literals, detect block labels
 
+
 ## Misc
 
 License: https://en.wikipedia.org/wiki/WTFPL
 
-I'm receptive to suggestions. If this package _almost_ satisfies you but needs changes, open an issue or chat me up. Contacts: https://mitranim.com/#contacts
+Since it's been merged into the built-in ST packages, this repo is now frozen. Contributions should be directed to https://github.com/sublimehq/Packages.
+
+You can reach me via https://mitranim.com/#contacts.
